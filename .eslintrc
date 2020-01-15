@@ -6,6 +6,7 @@
       "jquery": true,
       "es6": true
     },
+    "parser": "babel-eslint",
     "globals": {},
     "rules": {
       "complexity": [1, 2],
