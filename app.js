@@ -1,4 +1,3 @@
-const cheerio = require('cheerio');
 const axios = require('axios');
 const Scraper = require('./scripts/Scraper');
 const Parser = require('./scripts/Parser');
@@ -6,11 +5,13 @@ const Parser = require('./scripts/Parser');
 const cascadeEastSouthURL = 'https://www.nwac.us/avalanche-forecast/current/cascade-east-south/';
 
 const scraper = new Scraper();
+const parser = new Parser();
 
 scraper.scrape(cascadeEastSouthURL)
-    .then(htmlResponse =>
-        // parse html string to json
-        Parser.parseHtmlString(htmlResponse)
+    .then(html =>
+
+    // parse html string to json
+        console.log(parser.parseHtmlString(html))
     )
     .then(function (jsonResponse) {
         // json to file

@@ -1,13 +1,10 @@
 const rp = require('request-promise');
+const cheerio = require('cheerio');
 
 class Scraper {
 
-    async scrape(url) {
-        let promise = rp(url);
-        let result = await promise;
-        console.log(typeof promise);
-        console.log('scrape');
-        return result;
+    scrape(url) {
+        return rp(url)
     }
 
     handleError(err) {
