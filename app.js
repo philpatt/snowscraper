@@ -14,7 +14,7 @@ scraper.scrape(cascadeEastSouthURL)
     .then(html =>
 
     // parse html string to json
-        console.log(parser.parseHtmlString(html))
+        parser.parseHtmlString(html)
     )
     .then(function (jsonResponse) {
         // json to file
