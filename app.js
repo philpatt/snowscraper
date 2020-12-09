@@ -4,21 +4,21 @@ const Parser = require('./scripts/Parser');
 const Mailer = require('./scripts/Mailer');
 
 // NWAC URL
-const cascadeEastSouthURL = 'https://www.nwac.us/avalanche-forecast/current/cascade-east-south/';
+const cascadeEastSouthURL = 'https://nwac.us/avalanche-forecast/#/west-slopes-central';
 
 const scraper = new Scraper();
 const parser = new Parser();
-const mailer = new Mailer();
+// const mailer = new Mailer();
 
 scraper.scrape(cascadeEastSouthURL)
-    .then(html =>
-
-    // parse html string to json
-        parser.parseHtmlString(html)
-    )
+    .then( function (html) {
+        // parse html string to json
+        // need to figure out how puppeteer scrapes
+        // parser.parseHtmlString(html)
+    })
     .then(function (jsonResponse) {
         // json to file
-        mailer.send()
+        // mailer.send()
     })
     .then(function (fileResponse) {
         // if file creation is successfule
